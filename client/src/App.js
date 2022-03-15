@@ -1,5 +1,6 @@
 import React from 'react';
-import Header from './components/header';
+import Header from './components/Header';
+import CardList from './components/CardList';
 import './App.css';
 
 function App() {
@@ -14,6 +15,11 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <main>
+        <section>
+          <CardList />
+        </section>
+      </main>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>{!data ? "Loading..." : data}</p>
