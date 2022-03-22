@@ -1,6 +1,6 @@
 const Card = (props) => {
   return (
-    <li className="card fadein"><textarea readOnly spellCheck='false' value={props.task}></textarea></li>
+    <li className="card fadein"><textarea readOnly spellCheck='false' value={props.name}></textarea></li>
   )
 }
 

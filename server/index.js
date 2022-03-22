@@ -19,6 +19,9 @@ connection.once('open', () => {
   console.log("MongoDB database connection established successfully");
 })
 
+const tasksRouter = require('./routes/tasks');
+
+app.use('/tasks', tasksRouter);
 // app.get('/api', (req, res) => {
 //   res.json({tasks: ['It was a dark and stormy night.',
 //   'Fight Margit',
