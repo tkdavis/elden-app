@@ -1,17 +1,13 @@
 import Card from './Card';
+import Button from './Button';
 
-const CardList = () => {
-  const tasks = ["It was a dark and stormy night.",
-                   "Fight Margit",
-                   "Find more spells",
-                   "Visit Stoneveil Castle",
-                   "Return to the church",
-                   "Talk to the chrysalis people and return to red riding hood",
-                   "It was a dark and stormy night.",
-                   "Fight Margit",
-                   "Find more spells",
-                   "Visit Stoneveil Castle",
-                   "Return to the church"]
+const CardList = ({tasks}) => {
+
+  const addTask = () => {
+    console.log('task');
+  }
+
+  console.log(tasks)
 
   const listTasks = tasks.map((task, i) => {
     return <Card key={i} task={task} />
@@ -19,6 +15,7 @@ const CardList = () => {
   return (
     <ul>
       {listTasks}
+      <Button text='Add Task +' onClick={addTask}/>
     </ul>
   )
 }

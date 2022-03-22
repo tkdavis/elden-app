@@ -4,20 +4,20 @@ import CardList from './components/CardList';
 import './App.css';
 
 function App() {
-  // const [data, setData] = React.useState(null);
+  const [data, setData] = React.useState(null);
 
-  // React.useEffect(() => {
-  //   fetch("/api")
-  //     .then((res) => res.json())
-  //     .then((data) => setData(data.message));
-  // }, []);
+  React.useEffect(() => {
+    fetch("/api")
+      .then((res) => res.json())
+      .then((data) => setData(data.tasks));
+  }, []);
 
   return (
     <div className="App">
       <Header />
       <main>
         <section>
-          <CardList />
+          <CardList tasks={!data ? ['Loading Tasks...'] : data}/>
         </section>
       </main>
       {/* <header className="App-header">
