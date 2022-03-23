@@ -4,12 +4,12 @@ import CardList from './components/CardList';
 import './App.css';
 
 function App() {
-  const [data, setData] = React.useState(null);
+  const [tasks, setTasks] = React.useState(null);
 
   React.useEffect(() => {
     fetch("/tasks")
       .then((res) => res.json())
-      .then((data) => setData(data.tasks));
+      .then((tasks) => setTasks(tasks));
   }, []);
 
   return (
@@ -17,13 +17,9 @@ function App() {
       <Header />
       <main>
         <section>
-          <CardList tasks={!data ? ['Loading Tasks...'] : data}/>
+          <CardList tasks={!tasks ? ['Loading Tasks...'] : tasks}/>
         </section>
       </main>
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>{!data ? "Loading..." : data}</p>
-      </header> */}
     </div>
   );
 }

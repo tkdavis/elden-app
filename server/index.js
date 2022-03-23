@@ -22,19 +22,6 @@ connection.once('open', () => {
 const tasksRouter = require('./routes/tasks');
 
 app.use('/tasks', tasksRouter);
-// app.get('/api', (req, res) => {
-//   res.json({tasks: ['It was a dark and stormy night.',
-//   'Fight Margit',
-//   'Find more spells',
-//   'Visit Stoneveil Castle',
-//   'Return to the church',
-//   'Talk to the chrysalis people and return to red riding hood',
-//   'It was a dark and stormy night.',
-//   'Fight Margit',
-//   'Find more spells',
-//   'Visit Stoneveil Castle',
-//   'Return to the church']});
-// });
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);

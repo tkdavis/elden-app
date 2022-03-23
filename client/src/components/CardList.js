@@ -4,18 +4,16 @@ import Button from './Button';
 const CardList = ({tasks}) => {
 
   const addTask = () => {
-    console.log('task');
+    // add task here
   }
 
-  console.log(tasks)
-
-  const listTasks = tasks.map((task, i) => {
-    return <Card key={i} task={task} />
+  const listTasks = tasks.map((task) => {
+    return <Card key={task._id} name={task.name} />
   })
   return (
     <ul>
       {listTasks}
-      <Button text='Add Task +' onClick={addTask}/>
+      <Button text='Add Quest +' onClick={addTask}/>
     </ul>
   )
 }
