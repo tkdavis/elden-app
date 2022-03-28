@@ -1,19 +1,17 @@
 import Card from './Card';
 import Button from './Button';
+import TaskForm from './TaskForm';
 
-const CardList = ({tasks}) => {
+const CardList = ({tasks, addTask}) => {
 
-  const addTask = () => {
-    // add task here
-  }
-
-  const listTasks = tasks.map((task) => {
-    return <Card key={task._id} name={task.name} />
+  const listTasks = tasks.map((task, i) => {
+    return <Card key={i} name={task.name} completed={task.completed}/>
   })
+
   return (
     <ul>
       {listTasks}
-      <Button text='Add Quest +' onClick={addTask}/>
+      <TaskForm addTask={addTask} />
     </ul>
   )
 }

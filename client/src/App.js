@@ -12,12 +12,24 @@ function App() {
       .then((tasks) => setTasks(tasks));
   }, []);
 
+  const addTask = (name) => {
+    setTasks([...tasks, {name, completed: false}]);
+
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({name, completed: false})
+    };
+    fetch('/tasks/add', requestOptions)
+      .then(res => res.json());
+  }
+
   return (
     <div className="App">
       <Header />
       <main>
         <section>
-          <CardList tasks={!tasks ? ['Loading Tasks...'] : tasks}/>
+          <CardList tasks={!tasks ? ['Loading Tasks...'] : tasks} addTask={addTask}/>
         </section>
       </main>
     </div>
